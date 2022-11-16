@@ -17,10 +17,11 @@ shroomNames=['Agaricus',
 #endregion
 
 image_size = (180, 180)
-batch_size = 128
+batch_size = 32
 
 train_ds, val_ds = tf.keras.preprocessing.image_dataset_from_directory(
     "mushrooms_train",
+    labels="inferred",
     validation_split=0.2,
     subset="both",
     seed=1337,
